@@ -24,12 +24,12 @@ def dec_to_bin(num: int) -> str:
   
   return res[::-1]
 
-# while True:
-#   text = input("Input: ")
-#   a_sum = ascii_sum(text)
-#   hashed_sum = a_sum % 256
+while True:
+  text = input("Input: ")
+  a_sum = ascii_sum(text)
+  hashed_sum = a_sum % 256
 
-#   print(format(1, "#04b"))
-#   print(f"Ascii Sum: {a_sum}")
-#   print(f"Hashed Sum: {hashed_sum}")
-#   print(f"Binary String: {dec_to_bin(hashed_sum)}")
+  print(format(1, "#04b"))
+  print(f"Ascii Sum: {a_sum}")
+  print(f"Hashed Sum: {hashed_sum}")
+  print(f"Binary String: {dec_to_bin(hashed_sum)}")
