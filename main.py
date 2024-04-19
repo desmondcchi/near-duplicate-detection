@@ -1,4 +1,4 @@
-from ascii_sum import ascii_sum, dec_to_bin
+from helpers import ascii_sum, dec_to_bin
 from collections import Counter
 
 def hash_word(word: str) -> str:
@@ -12,6 +12,7 @@ print("")
 doc_1_words = doc_1.split(" ")
 doc_2_words = doc_2.split(" ")
 
+# Count words.
 doc_1_word_counter = Counter()
 doc_2_word_counter = Counter()
 
@@ -20,6 +21,16 @@ for word in doc_1_words:
 
 for word in doc_2_words:
   doc_2_word_counter[word.lower()] += 1
+
+print("Word counts in document 1:")
+for k, v in doc_1_word_counter.items():
+  print(f"{k} : {v}")
+print("")
+
+print("Word counts in document 2:")
+for k, v in doc_2_word_counter.items():
+  print(f"{k} : {v}")
+print("")
 
 # Hash words.
 doc_1_hashed_words = {}
@@ -30,6 +41,16 @@ for word in doc_1_word_counter.keys():
 
 for word in doc_2_word_counter.keys():
   doc_2_hashed_words[word] = hash_word(word)
+
+print("Hash values of words in document 1:")
+for k, v in doc_1_hashed_words.items():
+  print(f"{k} : {v}")
+print("")
+
+print("Hash values of words in document 2:")
+for k, v in doc_2_hashed_words.items():
+  print(f"{k} : {v}")
+print("")
 
 # Build weight vectors V.
 V_1 = [None for _ in range(8)]
